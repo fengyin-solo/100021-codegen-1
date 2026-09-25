@@ -21,6 +21,7 @@ const Expense = () => import('@/views/expense/index.vue')
 const Schedule = () => import('@/views/schedule/index.vue')
 const Permit = () => import('@/views/permit/index.vue')
 const Wrap = () => import('@/views/wrap/index.vue')
+const Cockpit = () => import('@/views/cockpit/index.vue')
 
 const router = createRouter({
   history: createWebHistory(),
@@ -46,6 +47,7 @@ const router = createRouter({
     { path: '/schedule', name: 'schedule', component: Schedule },
     { path: '/permit', name: 'permit', component: Permit },
     { path: '/wrap', name: 'wrap', component: Wrap },
+    { path: '/cockpit', name: 'cockpit', component: Cockpit },
   ],
 })
 
