@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Dashboard from '@/views/Dashboard.vue'
 const Script = () => import('@/views/script/index.vue')
+const Cockpit = () => import('@/views/cockpit/index.vue')
 const Scene = () => import('@/views/scene/index.vue')
 const Casting = () => import('@/views/casting/index.vue')
 const Crew = () => import('@/views/crew/index.vue')
@@ -27,6 +28,7 @@ const router = createRouter({
   routes: [
     { path: '/', name: 'dashboard', component: Dashboard },
     { path: '/script', name: 'script', component: Script },
+    { path: '/cockpit', name: 'cockpit', component: Cockpit },
     { path: '/scene', name: 'scene', component: Scene },
     { path: '/casting', name: 'casting', component: Casting },
     { path: '/crew', name: 'crew', component: Crew },

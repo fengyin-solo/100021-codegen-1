@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 from app.routers import script as router_script
+from app.routers import cockpit as router_cockpit
 from app.routers import scene as router_scene
 from app.routers import casting as router_casting
 from app.routers import crew as router_crew
@@ -27,4 +28,4 @@ from app.routers import schedule as router_schedule
 from app.routers import permit as router_permit
 from app.routers import wrap as router_wrap
 
-ROUTERS = [router_script, router_scene, router_casting, router_crew, router_notice, router_location, router_prop, router_costume, router_makeup, router_equipment, router_shooting, router_footage, router_edit, router_vfx, router_review, router_budget, router_expense, router_schedule, router_permit, router_wrap]
+ROUTERS = [router_script, router_cockpit, router_scene, router_casting, router_crew, router_notice, router_location, router_prop, router_costume, router_makeup, router_equipment, router_shooting, router_footage, router_edit, router_vfx, router_review, router_budget, router_expense, router_schedule, router_permit, router_wrap]

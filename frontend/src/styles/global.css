@@ -33,3 +33,37 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .link { border: none; background: none; color: var(--brand); cursor: pointer; padding: 0; }
 .page-foot { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
 .error-text { color: #b42318; }
+
+/* 剧本审稿驾驶舱 */
+.view-switch { display: inline-flex; gap: 6px; margin-right: 8px; }
+.error-panel { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; }
+.loading-text { color: var(--muted); font-size: 13px; }
+.board-row { display: flex; gap: 12px; align-items: flex-start; }
+.board-col { flex: 1; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; min-width: 0; }
+.board-col-head { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.board-card { border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; margin-bottom: 8px; cursor: pointer; }
+.board-card:hover { border-color: var(--brand); }
+.board-card.active { border-color: var(--brand); box-shadow: 0 0 0 1px var(--brand); }
+.board-card-title { display: block; font-size: 14px; }
+.board-card-code { display: block; color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+.board-card-fields { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
+.board-card-fields div { display: flex; justify-content: space-between; font-size: 12px; }
+.board-card-fields dt { color: var(--muted); }
+.board-card-fields dd { margin: 0; }
+.board-empty { color: var(--muted); font-size: 12px; text-align: center; }
+.clickable-row { cursor: pointer; }
+.clickable-row:hover td { background: #f0f6ff; }
+.clickable-row.active td { background: #e3edff; }
+.detail-panel { margin-top: 16px; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; }
+.detail-head { display: flex; justify-content: space-between; align-items: flex-start; }
+.detail-head h3 { margin: 0 0 4px; font-size: 15px; }
+.detail-grid { display: flex; gap: 16px; align-items: flex-start; margin-top: 8px; }
+.detail-block { flex: 1; min-width: 0; }
+.detail-block h4 { margin: 0 0 8px; font-size: 13px; color: var(--muted); }
+.timeline { margin: 0; padding-left: 18px; font-size: 13px; }
+.timeline li { margin-bottom: 6px; }
+.timeline-stage { font-weight: 600; margin-right: 8px; }
+.timeline-at { color: var(--muted); }
+.review-empty { border: 1px dashed var(--border); border-radius: 6px; padding: 16px; text-align: center; color: var(--muted); font-size: 13px; }
+.review-empty strong { display: block; color: #1f2937; margin-bottom: 4px; }
+.review-empty p { margin: 0; }

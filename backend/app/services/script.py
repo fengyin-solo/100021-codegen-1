@@ -1,6 +1,7 @@
 """剧本管理业务规则：状态流转、字段校验与筛选口径都收在这里。"""
 from __future__ import annotations
 
+from datetime import datetime
 from typing import Any
 
 from app.store import store
@@ -10,6 +11,11 @@ REQUIRED_FIELDS = ["剧本编号", "剧本名称", "题材类型"]
 STATUS_ORDER = ["创作中", "待审稿", "已定稿", "已归档"]
 ACTION_RULES = {"提交审稿": "待审稿", "确认定稿": "已定稿", "归档剧本": "已归档"}
 NEGATIVE_ACTIONS = []
+
+
+def _now() -> str:
+    """阶段变更时间统一精确到分钟，驾驶舱时间线直接展示。"""
+    return datetime.now().strftime("%Y-%m-%d %H:%M")
 
 
 class ScriptService:
@@ -43,6 +49,7 @@ class ScriptService:
         entry["status"] = STATUS_ORDER[0]
         entry["pending"] = True
         entry["abnormal"] = False
+        entry["stage_history"] = [{"stage": STATUS_ORDER[0], "at": _now()}]
         rows.append(entry)
         return entry, []
 
@@ -58,4 +65,8 @@ class ScriptService:
         entry["status"] = target
         entry["pending"] = target != STATUS_ORDER[-1]
         entry["abnormal"] = action in NEGATIVE_ACTIONS
+        history = entry.setdefault("stage_history", [])
+        if not history:
+            history.append({"stage": STATUS_ORDER[0], "at": _now()})
+        history.append({"stage": target, "at": _now()})
         return entry, f"剧本已{action}"
